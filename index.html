@@ -12,7 +12,6 @@
             --cream: #fdfbf7;
             --text: #1a1a1a;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { box-sizing: border-box; }
@@ -34,54 +33,20 @@
             padding: 0 24px;
         }
 
-        /* --- ヘッダー (ナビゲーション追加) --- */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 10px 0;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-logo { font-family: 'Noto Serif JP'; font-weight: 900; font-size: 1.1rem; color: var(--navy); text-decoration: none; }
-        
-        .nav-menu {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        .nav-item {
-            font-size: 0.9rem;
-            font-weight: 500;
+        /* --- 1. 最上部：告知バナー --- */
+        .announcement {
+            background-color: var(--gold);
             color: var(--navy);
-            text-decoration: none;
-            transition: color 0.3s;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
-        .nav-item:hover { color: var(--gold); }
-        
-        .nav-btn {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            background: var(--gold);
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .nav-btn:hover { opacity: 0.8; }
+        .announcement a { color: inherit; margin-left: 10px; }
 
-        /* --- メインビジュアル --- */
+        /* --- 2. メインビジュアル --- */
         .main-visual {
             width: 100%;
-            margin-top: 60px;
             background-color: #000;
         }
         .main-visual img {
@@ -90,7 +55,7 @@
             display: block;
         }
 
-        /* --- ヒーローセクション --- */
+        /* --- 3. ヒーローセクション --- */
         .hero {
             background-color: var(--navy);
             color: #fff;
@@ -129,6 +94,7 @@
             font-weight: bold;
             border-radius: 4px;
             transition: 0.3s;
+            display: inline-block;
         }
         .btn-main { background: var(--gold); color: var(--navy); }
         .btn-sub { border: 2px solid #fff; color: #fff; }
@@ -172,6 +138,16 @@
             height: 100%;
         }
 
+        /* 詳細テーブル */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        .details-table tr { border-bottom: 1px solid #ddd; }
+        .details-table th { text-align: left; padding: 20px 0; width: 30%; font-family: 'Noto Serif JP'; }
+        .details-table td { padding: 20px 0; }
+
         /* 幹事募集 */
         .cta-section {
             background: var(--navy);
@@ -188,28 +164,21 @@
         }
 
         @media (max-width: 768px) {
-            .nav-menu { display: none; } /* スマホでは簡易化 */
             .speaker-main { flex-direction: column; }
             .speaker-main-img { flex: 0 0 100%; }
+            .section { padding: 80px 0; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container header-inner">
-            <a href="#" class="header-logo">Wonder x Wander</a>
-            <nav class="nav-menu">
-                <a href="#concept" class="nav-item">Concept</a>
-                <a href="#speakers" class="nav-item">Speakers</a>
-                <a href="#details" class="nav-item">Details</a>
-                <a href="#kanji" class="nav-btn">幹事に募集</a>
-            </nav>
-        </div>
-    </header>
+    <div class="announcement">
+        【幹事団・共創メンバー募集中】安田講堂の舞台を共に創る仲間を求めています。
+        <a href="#kanji">詳細・応募はこちら</a>
+    </div>
 
     <div class="main-visual">
-        <img src="2026_0616_banner_g.jpg" alt="Humanity Summit 2026">
+        <img src="2026_0616_banner_g.png" alt="Humanity Summit 2026">
     </div>
 
     <section class="hero">
@@ -223,7 +192,7 @@
                 <a href="#kanji" class="btn btn-sub">幹事に応募する</a>
             </div>
         </div>
-    </header>
+    </section>
 
     <section id="concept" class="section">
         <div class="container">
@@ -243,15 +212,15 @@
                 </div>
                 <div class="speaker-main-content">
                     <h3>山極 壽一 氏</h3>
-                    <p style="font-weight: 700; color: var(--gold);">前京都大学総長 ／ 総合地球環境学研究所所長</p>
-                    <p>霊長類学・人類進化論を専門とし、野生ゴリラの研究を通じて「つながり」と「共感」から人間社会を読み解く知の巨星。</p>
+                    <p style="font-weight: 700; color: var(--gold); margin-bottom: 16px;">前京都大学総長 ／ 総合地球環境学研究所所長</p>
+                    <p>霊長類学・人類進化論を専門とし、野生ゴリラの研究を通じて「つながり」と「共感」から人間社会を読み解く知の巨星。日本学術会議会長、2025年大阪・関西万博シニアアドバイザー等を歴任。</p>
                 </div>
             </div>
 
             <div class="panelist-grid">
                 <div class="panelist-card">
                     <h4>久保田 しおん</h4>
-                    <p>素粒子物理学者。ハーバード大学博士。国際共同研究DUNEに参画。</p>
+                    <p>素粒子物理学者。ハーバード大学博士。国際共同研究DUNEに参画。Forbes Asia 30 Under 30選出。</p>
                 </div>
                 <div class="panelist-card">
                     <h4>風間 健人</h4>
@@ -259,11 +228,11 @@
                 </div>
                 <div class="panelist-card">
                     <h4>岡田 亜理寿</h4>
-                    <p>京都・集会所喫茶店「ことぶき」女将。看護師。環境アクションの実践者。</p>
+                    <p>京都・集会所喫茶店「ことぶき」女将。看護師。環境アクションと対話の場づくりを推進。</p>
                 </div>
                 <div class="panelist-card">
                     <h4>渡邊 和樹</h4>
-                    <p>空海研究者。NPO「寺子屋みなてらす」共同創業。東大文卒。</p>
+                    <p>空海研究者。NPO「寺子屋みなてらす」共同創業。東大文卒、多摩美院で研究中。</p>
                 </div>
             </div>
         </div>
@@ -272,23 +241,23 @@
     <section id="details" class="section">
         <div class="container">
             <h2 class="section-title">Details</h2>
-            <div style="max-width: 600px; margin: 0 auto;">
-                <table style="width: 100%; border-collapse: collapse; margin-bottom: 40px;">
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <th style="text-align: left; padding: 15px 0; width: 30%;">日時</th>
-                        <td style="padding: 15px 0;">2026年6月16日（火） 18:00 - 20:00</td>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <table class="details-table">
+                    <tr>
+                        <th>日時</th>
+                        <td>2026年6月16日（火） 18:00 - 20:00</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <th style="text-align: left; padding: 15px 0;">会場</th>
-                        <td style="padding: 15px 0;">東京大学本郷キャンパス 安田講堂</td>
+                    <tr>
+                        <th>会場</th>
+                        <td>東京大学本郷キャンパス 安田講堂</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <th style="text-align: left; padding: 15px 0;">参加費</th>
-                        <td style="padding: 15px 0;">4,000円（早期割引・学生料金設定あり）</td>
+                    <tr>
+                        <th>参加費</th>
+                        <td>4,000円（早期割引・学生料金設定あり）</td>
                     </tr>
                 </table>
-                <div style="text-align: center;">
-                    <a href="https://peatix.com/event/4965021" class="btn btn-main" target="_blank" style="display: inline-block;">お申し込み（Peatix）</a>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://peatix.com/event/4965021" class="btn btn-main" target="_blank">お申し込み（Peatix）</a>
                 </div>
             </div>
         </div>
@@ -297,14 +266,14 @@
     <section id="kanji" class="cta-section">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 32px;">「混沌のタベー」を共にデザインする</h2>
-            <p>安田講堂という特別な場所で、山極先生や登壇者と共に、答えなき問いに向き合う「場」を設計する幹事メンバーを募集しています。</p>
-            <a href="#" class="btn btn-main" style="background: var(--gold); margin-top: 40px; display: inline-block;">幹事エントリーフォームへ</a>
+            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; opacity: 0.9;">安田講堂という特別な場所で、山極先生や登壇者と共に、答えなき問いに向き合う「場」を設計する幹事メンバーを募集しています。</p>
+            <a href="#" class="btn btn-main" style="background: var(--gold);">幹事エントリーフォームへ</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div style="color: #fff; margin-bottom: 24px;">
+            <div style="color: #fff; margin-bottom: 24px; font-size: 0.9rem;">
                 主催：学士会YELL / 京都大学同窓会若手会 / eumo / GENERYS / UTokyo
             </div>
             <p>&copy; 2026 Humanity Summit Executive Committee.</p>
