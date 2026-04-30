@@ -115,30 +115,76 @@
             margin: 24px auto 0;
         }
 
-        .speaker-main {
+    /* 5名を中央寄せで並べるためのコンテナ */
+        .speakers-layout {
             display: flex;
-            gap: 60px;
-            align-items: flex-start;
-            margin-bottom: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px 40px;
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 0;
         }
-        .speaker-main-img { flex: 0 0 40%; }
-        .speaker-main-img img { width: 100%; border-radius: 4px; box-shadow: 20px 20px 0 var(--cream); }
-        .speaker-main-content { flex: 1; }
-        
-        .panelist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+    
+        /* 1人分のカード設定 */
+        .speaker-card {
+            flex: 0 1 310px;
+            text-align: center;
         }
-        .panelist-card {
-            background: var(--cream);
-            padding: 35px;
-            border-radius: 4px;
+    
+        .speaker-icon-wrap {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+        }
+        .speaker-icon-wrap img {
+            width: 100%;
             height: 100%;
-            border-left: 4px solid var(--gold);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--navy); /* 背景色に合わせたネイビー */
+            padding: 4px;
+            background: #fff;
         }
-
+    
+        .name-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            min-height: 32px;
+        }
+        .name-plate {
+            background-color: var(--navy); /* ネイビーの氏名プレート */
+            color: #fff;
+            padding: 4px 16px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .role-note {
+            font-size: 0.75rem;
+            color: #555;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    
+        .speaker-bio {
+            font-size: 0.82rem;
+            line-height: 1.7;
+            text-align: left;
+            color: #333;
+            margin: 0;
+            padding: 0 10px;
+        }
+    
+        @media (max-width: 768px) {
+            .speakers-layout { gap: 50px 10px; }
+            .speaker-card { flex: 0 1 100%; max-width: 350px; }
+        }
         .details-table {
             width: 100%;
             border-collapse: collapse;
@@ -215,25 +261,42 @@
                     <p>総合地球環境学研究所 所長。1952年東京生まれ。霊長類学・人類進化論を専門に、屋久島のニホンザルやアフリカの野生ゴリラの社会生態学的研究に従事。「つながり」と「共感」から人間社会を読み解く。京都大学教授・理学部長等を経て第26代京都大学総長(〜2020年)。日本学術会議会長、国際霊長類学会会長、2025年大阪・関西万博シニアアドバイザー等を歴任。南方熊楠賞、アカデミア賞受賞。</p>
                 </div>
             </div>
-
-            <div class="panelist-grid">
-                <div class="panelist-card">
-                    <h4>久保田 しおん</h4>
-                    <p>素粒子物理学者（ニュートリノ物理学）。ハーバード大学博士。国際共同研究DUNEに参画し、Forbes Asia 30 Under 30等にも選定。</p>
+            <div class="speakers-layout">
+                    <!-- 1. 久保田 しおん -->
+                    <div class="speaker-card">
+                        <div class="speaker-icon-wrap"><img src="kubota.jpg" alt="久保田 しおん"></div>
+                        <div class="name-row"><span class="name-plate">久保田 しおん</span><span class="role-note">＊WEB登壇</span></div>
+                        <p class="speaker-bio">ニュートリノ物理学者。ハーバード大学で博士号取得。LBNLのOwen Chamberlain Fellowとして国際共同研究DUNEに参画。Forbes Asia 30 Under 30、MIT Technology Review Innovators Under 35 Japan選出。</p>
+                    </div>
+            
+                    <!-- 2. 風間 健人 -->
+                    <div class="speaker-card">
+                        <div class="speaker-icon-wrap"><img src="kazama.jpg" alt="風間 健人"></div>
+                        <div class="name-row"><span class="name-plate">風間 健人</span></div>
+                        <p class="speaker-bio">Quark共同創業者・CEO。東京大学大学院 学際情報学府 博士課程。AI×XRで技能移転と社会インフラのDXに取り組む。新潟県小千谷市を中心とした国家戦略特区構想とSnowTechを推進。</p>
+                    </div>
+            
+                    <!-- 3. 岡田 亜理寿 -->
+                    <div class="speaker-card">
+                        <div class="speaker-icon-wrap"><img src="arisu.jpg" alt="岡田 亜理寿"></div>
+                        <div class="name-row"><span class="name-plate">岡田 亜理寿</span></div>
+                        <p class="speaker-bio">京都の集会所喫茶店「ことぶき」女将（24年5月開店）。看護師・保健師。アースデイジャパンネットワーク共同代表として連携アクションと対話の場づくりを推進。</p>
+                    </div>
+            
+                    <!-- 4. 渡邊 和樹 -->
+                    <div class="speaker-card">
+                        <div class="speaker-icon-wrap"><img src="watanabe.JPG" alt="渡邊 和樹"></div>
+                        <div class="name-row"><span class="name-plate">渡邊 和樹</span></div>
+                        <p class="speaker-bio">空海研究者。東京大学文学部（2017卒）。GCストーリーで自律分散型組織の変革に携わり、2020年より学習支援NPO「寺子屋みなてらす」を共同創業・運営。2024年より多摩美術大学大学院で空海研究を深めている。</p>
+                    </div>
+            
+                    <!-- 5. 岩波 直樹 -->
+                    <div class="speaker-card">
+                        <div class="speaker-icon-wrap"><img src="eumoIwanami.jpg" alt="岩波 直樹"></div>
+                        <div class="name-row"><span class="name-plate">岩波 直樹</span><span class="role-note">＊モデレーター</span></div>
+                        <p class="speaker-bio">非営利株式会社eumo 代表取締役。GCホールディングス代表取締役。武蔵野大学well-being学部客員教授。対話と学び（eumo Academy）で未来共創をデザイン。</p>
+                    </div>
                 </div>
-                <div class="panelist-card">
-                    <h4>風間 健人</h4>
-                    <p>Quark共同創業者・CEO。東大院博士課程。AI×XRで技能移転と社会インフラのDXに取り組むエンジニア。</p>
-                </div>
-                <div class="panelist-card">
-                    <h4>岡田 亜理涛</h4>
-                    <p>京都・集会所喫茶店「ことぶき」女将。看護師。環境アクションと対話の場づくりを推進する実践者。</p>
-                </div>
-                <div class="panelist-card">
-                    <h4>渡邊 和樹</h4>
-                    <p>空海研究者。NPO「寺子屋みなてらす」共同創業。東大文学部卒、現在は多摩美術大学大学院で研究を深めている。</p>
-                </div>
-            </div>
         </div>
     </section>
 
