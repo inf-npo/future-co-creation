@@ -439,9 +439,24 @@
                     <tr>
                         <th>会場</th>
                         <td>
-                            <a href="https://sites.google.com/gakushikai-member.net/future-co-creation/%E4%BC%9A%E5%A0%B4?authuser=0-ZeHw96WOPNNx2ucD6flXRrk/edit" style="color: var(--text); text-decoration: underline; font-weight: bold;" target="_blank">
-                                東京大学本郷キャンパス 安田講堂 (アクセスなど ↗)
-                            </a>
+                            <div style="margin-bottom: 12px;">
+                                <a href="https://sites.google.com/gakushikai-member.net/future-co-creation/%E4%BC%9A%E5%A0%B4?authuser=0-ZeHw96WOPNNx2ucD6flXRrk/edit" style="color: var(--text); text-decoration: underline; font-weight: bold; font-size: 1rem; display: inline-block;" target="_blank">
+                                    東京大学本郷キャンパス 安田講堂 ↗
+                                </a>
+                            </div>
+
+                            <!-- 2. 現在地からのGoogleマップ経路案内ボタン（テキストの下に配置） -->
+                            <div>
+                                <a href="https://maps.google.com/maps?saddr=My+Location&daddr=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E5%AE%89%E7%94%B0%E8%AC%9B%E5%A0%82+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%87%E4%BA%AC%E5%8C%BA%E6%9C%AC%E9%83%B7%25EF%25BC%2597%25E3%2583%2585%25E3%2583%25BC%25EF%25BC%2593%25EF%25BC%2591" 
+                                   class="btn" 
+                                   style="padding: 8px 16px; font-size: 0.8rem; border: 1px solid var(--gold); color: var(--navy); background: #fff; border-radius: 4px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;"
+                                   onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 10px rgba(197,160,89,0.15)';" 
+                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.05)';"
+                                   target="_blank">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <span>現在地からの経路を調べる ↗</span>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                     <tr>
